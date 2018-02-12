@@ -16,6 +16,9 @@ import backtype.storm.utils.Utils;
 
 import java.util.Map;
 
+ import com.lambdaworks.redis.RedisClient;
+ import com.lambdaworks.redis.RedisConnection;
+
 //submming the new topology
 //storm jar target/udacity-storm-lesson1_stage1-0.0.1-SNAPSHOT-jar-with-dependencies.jar udacity.storm.ReporterExclamationTopology
 
@@ -54,12 +57,11 @@ public class ReporterExclamationTopology {
   {
     // To output tuples from this bolt to the next stage bolts, if any
     OutputCollector _collector;
+    RedisConnection<String,String> redis;
 
     //********* TO DO 2-of-4
     // place holder to keep the connection to redis
     
-    import com.lambdaworks.redis.RedisClient;
-    import com.lambdaworks.redis.RedisConnection;
 
     //********* END 2-of-4
 
